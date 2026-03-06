@@ -29,5 +29,5 @@ See the [Preparation](preparation.html) page for details.
 
 If you have questions, feedback, or run into issues, please reach out:
 
-- TODO: add feedback form link
-- TODO: add contact email or Zulip/Slack channel
+- [Discussion on FHIR Zulip](https://chat.fhir.org/#narrow/channel/194447-nordics/topic/Swedish.20Health.20Data.20Hackathon/with/577167090) - #nordics channel
+- [Feedback form](https://docs.google.com/document/d/1qcZ0j2SNtgW9SgdCdJwp622Kcnm7WiCbphgomvP5j7Q/edit?usp=sharing)
