@@ -31,3 +31,4 @@ If you have questions, feedback, or run into issues, please reach out:
 
 - [Discussion on FHIR Zulip](https://chat.fhir.org/#narrow/channel/194447-nordics/topic/Swedish.20Health.20Data.20Hackathon/with/577167090) - #nordics channel
 - [Feedback form](https://docs.google.com/document/d/1qcZ0j2SNtgW9SgdCdJwp622Kcnm7WiCbphgomvP5j7Q/edit?usp=sharing)
+- PRs to this IG are welcome at [vadi2/vitalis-hackathon-2026-ig](https://github.com/vadi2/vitalis-hackathon-2026-ig)
