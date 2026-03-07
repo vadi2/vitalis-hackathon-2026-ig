@@ -1,6 +1,6 @@
 # Terminology
 
-**Track lead: Mikael Rinnetmaki**
+**Track lead: Vadim Peretokin**
 
 ## Overview
 
@@ -18,7 +18,7 @@ This track explores how applications can utilize the [Nordic FHIR terminology se
 
 ### Nordic Terminology Server & Translations
 
-- How Sensotrend's apps could utilize the Nordic terminology server with translations of codes - at build time
+- MIkael Rinnetmäki is interested in exploring how Sensotrend's apps could utilize the Nordic terminology server with translations of codes - at build time
 - How to feed all data from the Finnish code server to the Nordic FHIR terminology server
 
 ### Mapping Legacy Data to FHIR
