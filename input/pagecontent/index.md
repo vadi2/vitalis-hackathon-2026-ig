@@ -1,6 +1,6 @@
 # Vitalis Hackathon 2026
 
-Welcome to the Vitalis Hackathon 2026 - a health data hackathon held in **Gothenburg, Sweden** on **May 8, 2026**.
+Welcome to the Vitalis Hackathon 2026 - a health data hackathon organized by [HL7 Sweden](https://hl7.se/), held in **Gothenburg, Sweden** on **May 8, 2026**.
 
 **[Sign up for the hackathon here!](https://forms.gle/VtHrSBQib1oaBeEC8)**
 
