@@ -31,7 +31,7 @@ We currently have three proposed tracks:
 
 Two preparatory meetings will be held before the hackathon:
 
-- **Meeting 1 - April 15, 9-10am**: General introduction, track overview, and homework - [Join meeting](https://meet.google.com/mim-muhf-tvk)
+- **Webinar 1 - April 15, 9-10am**: General introduction, track overview, and homework - [Join meeting](https://meet.google.com/mim-muhf-tvk)
 - **Webinar 2 - April 22, 9-10am**: Q&A session and homework - [Join meeting](https://meet.google.com/edo-vtge-gee)
 
 See the [Preparation](preparation.html) page for details.

@@ -1,8 +1,8 @@
 # Preparation
 
-Two preparatory meetings will be held before the hackathon on May 8.
+Two preparatory webinars will be held before the hackathon on May 8.
 
-## Meeting 1 - April 15
+## Webinar 1 - April 15
 
 General introduction to the hackathon:
 
