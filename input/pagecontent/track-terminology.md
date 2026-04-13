@@ -52,14 +52,14 @@ These exercises introduce the core FHIR terminology operations. You'll work dire
 
     This returns `"result": false` with a message explaining the code is unknown.
 
-    **Try it yourself:**
+    Try it yourself:
 
     - What happens if you also send a `display` parameter with the wrong display name for code `73211009`? Does the server catch it? (hint: add `&display=Hypertension` to the valid code query)
     - Can you validate that a code belongs to a specific value set instead of just the code system? Try using the `ValueSet/$validate-code` endpoint with the diabetes descendants value set from exercise 3 below. Does `44054006` (Type 2 diabetes mellitus) belong? What about `38341003` (Hypertension)?
     - Try validating an NPU code. The system URL for NPU is `http://npu-terminology.org` - can you check if `NPU03835` (HbA1c) is valid?
 
-<details>
-<summary>More exercises: $expand and $translate</summary>
+<details markdown="1" style="border: 1px solid #aaa; border-radius: 4px; padding: 0.5em; margin-bottom: 1em;">
+<summary style="font-weight: bold; cursor: pointer; padding: 0.5em; margin: -0.5em; background-color: #f4f4f4; border-radius: 4px;">More exercises: $expand and $translate</summary>
 
 3. `$expand` - Expand a value set, optionally filtering by text. How does the result change with different filters?
 
@@ -75,7 +75,7 @@ These exercises introduce the core FHIR terminology operations. You'll work dire
 
     This narrows it down to 16 matches containing "type 2".
 
-    **Try it yourself:**
+    Try it yourself:
 
     - Add `&includeDesignations=true` to the expand query. What extra information do you get back? Can you spot translations in your language?
     - Try adding `&displayLanguage=sv` (or `no`, `da`) to the query. How does the output change?
@@ -87,6 +87,7 @@ These exercises introduce the core FHIR terminology operations. You'll work dire
     ```json
     {
       "resourceType": "ConceptMap",
+      "id": "snomed-to-icd10-diabetes-sample",
       "url": "https://hl7.se/fhir/ConceptMap/snomed-to-icd10-diabetes-sample",
       "name": "SnomedToIcd10DiabetesSample",
       "status": "draft",
@@ -190,6 +191,33 @@ These exercises show how to use a national SNOMED CT edition when building a FHI
     Note the version in the code system URI - `http://snomed.info/sct|http://snomed.info/sct/45991000052106` pins it to the Swedish edition.
 
 3. Build and check TX logs - Rebuild the IG with `./_genonce.sh`. After the build completes, open `output/qa-tx.html` in your browser. This shows every terminology request the IG publisher made. Can you find the request that validated your Swedish SNOMED code? Which server handled it - was it routed to the Nordic TX server?
+
+    Try it yourself:
+
+    - Break it on purpose - Change the display text in your Condition to something wrong (e.g. `#73211009 "Hypertension"`) and rebuild. What does the QA report say? Check both `output/qa.html` and `output/qa-tx.html`.
+    - Try a different national edition - Create another example using the Norwegian (`http://snomed.info/sct/51000202101`) or Danish (`http://snomed.info/sct/554471000005108`) edition. Does the build still validate successfully?
+    - Add an NPU-coded Observation - Create an Observation example that uses an NPU code for a lab result:
+
+        ```fsh
+        Instance: HbA1cExample
+        InstanceOf: Observation
+        Usage: #example
+        * status = #final
+        * code = http://npu-terminology.org#NPU03835 "Hb(Fe;B)—Haemoglobin A1c(Fe); subst.fr. = ?"
+        * subject = Reference(Patient/example)
+        * valueQuantity = 48 'mmol/mol'
+        ```
+
+        Does the build validate the NPU code? Check `qa-tx.html` to see if it reached the Nordic TX server.
+    - Create a ValueSet - Write a ValueSet in FSH that includes descendants of a SNOMED concept from a national edition, then bind it to a profile element. Does the IG publisher expand and validate it correctly?
+
+        ```fsh
+        ValueSet: DiabetesTypesSE
+        Id: diabetes-types-se
+        Title: "Diabetes Types (Swedish edition)"
+        * include codes from system http://snomed.info/sct|http://snomed.info/sct/45991000052106
+            where concept is-a #73211009 "Diabetes mellitus"
+        ```
 
 ### Part 2: AI Agents as terminology assistants
 
