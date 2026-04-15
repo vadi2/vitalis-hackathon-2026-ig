@@ -26,7 +26,7 @@ Also, due to the EHDS regulation, standardization efforts in Europe are now of c
 
   - The IG publisher can do some comparisons. It is not trivial to see which changes matter.
 
-  - Repos [https://github.com/hl7-eu/coalesced](https://github.com/hl7-eu/coalesced), [https://github.com/fhir-fi/nordic-base](https://github.com/fhir-fi/nordic-base), and[multi-profile-validation](https://github.com/Sensotrend/multi-profile-validation) show approaches for comparing profiles.
+  - Repos [https://github.com/hl7-eu/coalesced](https://github.com/hl7-eu/coalesced), [https://github.com/fhir-fi/nordic-base](https://github.com/fhir-fi/nordic-base), and [multi-profile-validation](https://github.com/Sensotrend/multi-profile-validation) show approaches for comparing profiles.
 
   - It could perhaps be possible to do the comparison fully programmatically. Read all profile definitions, generate sample resources that fulfil each requirement, validate against other profiles... This may be too ambitious for the hackathon?
 
