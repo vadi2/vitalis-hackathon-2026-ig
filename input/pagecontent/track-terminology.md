@@ -254,6 +254,7 @@ Bring your own problem, or pick from these:
 
     [https://ontoserver.csiro.au/shrimp/?fhir=https://tx-nordics.fhir.org/fhir/r4](https://ontoserver.csiro.au/shrimp/?fhir=https://tx-nordics.fhir.org/fhir/r4)
 - Connect an AI agent to the TX server via MCP - [fhir-mcp](https://github.com/xSoVx/fhir-mcp) is an existing MCP server that supports `terminology.lookup`, `terminology.expand`, and `terminology.translate`. Point it at the Nordic TX server by setting `TERMINOLOGY_BASE_URL=https://tx-nordics.fhir.org/fhir/r4` and use it from Claude Code or Cursor to look up codes conversationally
+- Autonomous codesystem mapping - Set up an AI agent on an autonomous loop to map a large codesystem (1000+ codes) to a standard terminology like SNOMED CT. The agent iterates through codes in batches, searches for matches, validates them against the TX server, and writes the results to a ConceptMap - all without manual intervention. This is a practical pattern for migrating legacy codesystems at scale
 - Validation pipeline - build a round-trip workflow where an AI proposes codes, the TX server validates them, and a human reviews the discrepancies
 
 ## Expected outcomes
