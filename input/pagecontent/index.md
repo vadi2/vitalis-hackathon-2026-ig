@@ -6,7 +6,7 @@ See the [Vitalis Hackathon 2026 flyer (PDF)](Vitalis-Hackathon-2026.pdf) for a p
 
 This hackathon is part of the [Nordic Health Data Hackathons](https://fhir.fi/hackathon/) series.
 
-## Tracks
+### Tracks
 
 The hackathon includes three tracks:
 
@@ -14,7 +14,7 @@ The hackathon includes three tracks:
 2. **[Terminology](track-terminology.html)** - Led by Vadim Peretokin
 3. **[Comparing National and EU FHIR Base Profiles](track-comparing-profiles.html)** - Led by Mikael Rinnetmaki
 
-## Schedule
+### Schedule
 
 | Time | Activity |
 |---|---|
@@ -30,7 +30,7 @@ Bonus sessions running in parallel with hacking from 9:30 (15 minutes each):
 - **UMI** track - see [the presentation](UMI-on-FHIR.pptx)
 - **IHE's Gazelle** tool
 
-## Preparation
+### Preparation
 
 Two preparatory meetings were held before the hackathon:
 
@@ -39,7 +39,7 @@ Two preparatory meetings were held before the hackathon:
 
 See the [Preparation](preparation.html) page for details.
 
-## Getting There
+### Getting There
 
 The hackathon was held at the [Swedish Exhibition & Congress Centre (Svenska Mässan)](https://en.vitalis.nu/plan-your-visit/find-us/), room R17 on Level 2, located at Mässans gata, Gothenburg. See the [Vitalis venue map (PDF)](https://vitalis.nu/uploads/sites/21/2026/03/Vitalis-2026_hallkarta.pdf) for details.
 
@@ -47,14 +47,14 @@ Entrance 5 is closed, so enter via the Upper House Entrance further down Mässan
 
 WiFi: connect to `GothiaTowers` (free).
 
-## Useful Links
+### Useful Links
 
 - [HL7 Sweden](https://hl7.se/)
 - [HL7 FHIR R4](https://hl7.org/fhir/R4/)
 - [FHIR Shorthand (FSH)](https://hl7.org/fhir/uv/shorthand/)
 - [The Nordic FHIR terminology server](https://tx-nordics.fhir.org/fhir)
 
-## Feedback & Support
+### Feedback & Support
 
 If you have questions, feedback, or run into issues, please reach out:
 

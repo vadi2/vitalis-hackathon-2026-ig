@@ -1,8 +1,6 @@
-# Comparing National and EU Base Profiles
-
 **Track lead: Mikael Rinnetmaki**
 
-## Overview
+### Overview
 
 This track focuses on comparing national FHIR base profiles across Nordic and European countries with the emerging EU base profiles. The goal is to understand the similarities, differences, and potential alignment opportunities.
 
@@ -10,17 +8,17 @@ Denmark, Finland, Norway, and Sweden have all published national FHIR base profi
 
 Also, due to the EHDS regulation, standardization efforts in Europe are now of central importance and HL7 Europe is a key organization in those efforts. With collaboration and harmonization between Nordic countries we can also in a better way contribute and influence European work, including European HL7 FHIR base profiles.
 
-## Goals
+### Goals
 
 - Get clarity on what kind of differences there are between each of the Nordic base profile specifications and the EU/EHDS ones.
 - Establish a vision and guidelines for harmonising Nordic base profiles with the EU/EHDS ones, where necessary.
 - get the [nordic-base](https://github.com/fhir-fi/nordic-base) FHIR implementation guide repo in sync with the [HL7 EU](https://github.com/hl7-eu/coalesced) one.
 
-## Prerequisites
+### Prerequisites
 
 - None
 
-## Tasks
+### Tasks
 
 - Let's discuss potential alternatives for checking profile compatibility.
 
@@ -41,13 +39,13 @@ Also, due to the EHDS regulation, standardization efforts in Europe are now of c
     participants.
   - See [the presentation](Xt-EHR_Testing_Hackathon_Vitalis_20260508.pdf) for instructions on how to get started!
 
-## Expected Outcomes
+### Expected Outcomes
 
 - Understanding of known and potential conflicts between the base profile specifications
 - Some guidance on further development of Nordic base profiles. Should the EU/EHDS profiles
   be acknowleged at all? If so, when and how?
 
-## Resources
+### Resources
 
 - [FHIR Base Profiles in the Nordics](https://invitepeople.com/public/events/cceaf0ab1a/seminars/99491)
   session in Vitalis conference programme
@@ -58,54 +56,6 @@ Also, due to the EHDS regulation, standardization efforts in Europe are now of c
   multi-profile-validation) repo demonstrating how profiles can be compared
 - [EHDS Gazelle Test Bed](https://ehds.gazelle-platform.net/)
 
-## Results
+### Results
 
-Participants discussed the problem and agreed that the problem of comparing profiles and evaluating
-whether they are compatible is foreseen to be a real issue and something the current FHIR tooling
-does not address properly.
-
-The group drew inspiration from Gino Canessa's
-[Cross-Version Extensions project](https://github.com/GinoCanessa/fhir-cross-version-source) (see 
-also the DevDays
-[presentation](https://www.devdays.com/wp-content/uploads/2025/06/250605_GinoCanessa_CrossVersionExtensions.pdf)
-and [video](https://www.youtube.com/watch?v=AFTnGTd-yWs)) for FHIR versions.
-
-### FHIR Schema Approach
-
-Aleksandr Kislitsyn worked on an [implementation](https://github.com/HealthSamurai/fhir-profile-diff) based on
-[FHIR Schema](https://github.com/fhir-schema/fhir-schema) to compare profiles.
-
-Identifying "hard differences" like conflicting cardinalities or bindings is important and trivial
-with this kind of a tool. However, there 
-
-Aleksandr Kislitsyn's implementation also includes Claude to provide AI-based analysis of the compatibility
-of profiles. It was surprisingly eye-opening.
-
-### StructureDefinition Merge Approach
-
-Pétur Þór Valdimarsson explored a different angle: take two implementation guides, compare them,
-and produce a third implementation guide that describes the compatibility between the first two.
-
-His prototype takes profile A and profile B, merges them with some post-processing, and uses
-extensions to describe similarities (and differences) in fields. The result is a normal
-implementation guide that can be built with the IG publisher, containing a "conflict profile"
-that summarises the relevant fields from either source and highlights where they break or where
-the profiling does something unnecessary (e.g. actively excluding an element that could just be
-left unsupported). The tool also drills into references - for example, checking whether the
-referenced organisation profiles are themselves compatible.
-
-The work is rough but promising; the next step is wiring up the IG theme to actually render the
-custom extensions so the compatibility annotations show up in the published output.
-
-### Automated Creation of Example Instances
-
-Each FHIR implementation guide should have examples that demonstrate the use of profiles. However,
-it is rare that national base profile specifications have an extensive set of examples covering
-each constraint and extension.
-
-If we could get the implementation guides to include extensive example resources, we could validate
-those example resources against profiles from other implementation guides and thereby evaluate
-compatibility of the implementation guides.
-
-The participants made some attempts to create resource instances automatically from profile
-definitions. The work did not proceed to a demonstratable level.
+See the [Results](results.html#comparing-national-and-eu-fhir-base-profiles) page.

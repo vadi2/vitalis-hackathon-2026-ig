@@ -79,11 +79,11 @@ pages:
   preparation.md:
     title: Preparation
   track-agentic-patient-access.md:
-    title: "Track: Agentic Patient Access"
+    title: "Track 1: Agentic Patient Access"
   track-terminology.md:
-    title: "Track: Terminology"
+    title: "Track 2: Terminology"
   track-comparing-profiles.md:
-    title: "Track: Comparing Profiles"
+    title: "Track 3: Comparing Profiles"
   results.md:
     title: Results
 

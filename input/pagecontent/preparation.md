@@ -1,8 +1,6 @@
-# Preparation
-
 Two preparatory webinars will be held before the hackathon on May 8.
 
-## Webinar 1 - April 15
+### Webinar 1 - April 15
 
 [Recording](https://drive.google.com/file/d/1p19d8FE333ChPhYrkFXKfUDp6sCZLa8A/view?usp=sharing)
 
@@ -14,7 +12,7 @@ General introduction to the hackathon:
   - Choose your track
   - Start preparing - begin implementing, experimenting with the tools and technologies relevant to your chosen track
 
-## Webinar 2 - April 22
+### Webinar 2 - April 22
 
 - Q&A session - bring your questions
 - E-hm FHIR initiatives (TBD)
@@ -22,6 +20,6 @@ General introduction to the hackathon:
   - Continue working on your track preparation
   - Come to the hackathon ready to hit the ground running
 
-## Hackathon - May 8
+### Hackathon - May 8
 
 The main event in Gothenburg. Come prepared to collaborate and build!

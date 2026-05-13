@@ -1,20 +1,18 @@
-# Agentic Patient Access
-
 **Track lead: Jens Villadsen**
 
-## Overview
+### Overview
 
 This track explores whether AI agents can enable patient access to health data portals that do not natively support FHIR. The approach is inspired by the Danish [Dhroxy](https://github.com/orgs/c3po-initiative/repositories) project, developed as part of the [c3po initiative](https://github.com/orgs/c3po-initiative/repositories), which uses AI agents to provide FHIR-based access to existing patient portals.
 
 Mikael Rinnetmaki is interested in exploring whether this approach could be replicated in Finland with the [Kanta patient portal](https://www.kanta.fi/).
 
-## Goals
+### Goals
 
 - Reverse-engineer the HTTP/API traffic of a patient-facing health portal that does not expose a FHIR API
 - Build an AI-assisted proxy (or FHIR facade) that translates the portal's internal data into standard FHIR R4 resources
 - Document the approach so others can replicate it for other portals
 
-## Candidate Swedish Systems
+### Candidate Swedish Systems
 
 The table below lists ten Swedish healthcare portals and central systems that are not (yet) accessible via FHIR. Any of these are valid targets for the track. Participants are also welcome to bring their own favourite portal from any country.
 
@@ -37,7 +35,7 @@ The table below lists ten Swedish healthcare portals and central systems that ar
 
 Most of these systems also have Android apps available on Google Play. These apps are valid targets for decompilation and static analysis (e.g. using [jadx](https://github.com/skylot/jadx) or [apktool](https://apktool.org/)) and can reveal API endpoints, request formats, and authentication flows that are not documented anywhere publicly.
 
-## Prerequisites
+### Prerequisites
 
 Attendees need to bring two things:
 
@@ -46,7 +44,7 @@ Attendees need to bring two things:
 
 Everything else should be possible to do at the hackathon.
 
-## Tasks
+### Tasks
 
 1. **Explore** — Log into your target portal with a test or personal account and capture the HTTP traffic using one of the methods below. Identify the key API calls that return health data.
    - **Browser DevTools — Copy as cURL** — The quickest way to capture a single request. Open the Network tab, right-click any request, and choose **Copy → Copy as cURL** (see [full tutorial](https://www.scrapingbee.com/tutorials/how-to-extract-curl-requests-from-chrome/)). The result is a self-contained shell command you can paste directly into a terminal or hand to an AI tool:
@@ -67,13 +65,13 @@ Everything else should be possible to do at the hackathon.
 5. **Document** — Write a short README that explains the authentication flow, the endpoint mapping, and any known limitations.
 6. **API Documentation** - Consider using https://github.com/mikkelkrogsholm/api-mapper
 
-## Expected Outcomes
+### Expected Outcomes
 
 - A GitHub repository (or a branch in an existing repo) containing a working or partially working FHIR proxy/facade for at least one non-FHIR Swedish health system
 - A mapping document (could be a simple markdown table) showing how the target system's data model maps to FHIR R4 resources
 - A short demo or write-up suitable for contributing back to the [c3po initiative](https://github.com/orgs/c3po-initiative/repositories)
 
-## Resources
+### Resources
 
 - [c3po initiative repositories](https://github.com/orgs/c3po-initiative/repositories) — reference implementations for Denmark (Dhroxy) and Sweden (inroxy)
 - [inroxy](https://github.com/c3po-initiative/inroxy) — community effort to build a FHIR proxy for 1177.se (already in progress — a natural starting point for the 1177 track)
@@ -83,7 +81,7 @@ Everything else should be possible to do at the hackathon.
 - [chrome-devtools-mcp](https://github.com/ChromeDevTools/chrome-devtools-mcp) — MCP server that gives an AI agent direct access to Chrome DevTools (network tab, console, DOM) — useful for live traffic inspection without a manual HAR export
 
 
-### Example starting prompt
+#### Example starting prompt
 
 ```
 # FHIR Facade Implementation — Plan Mode
@@ -191,26 +189,6 @@ Before finishing the plan, surface:
 Deliver the full analysis and plan, then pause and wait for review and approval before proceeding.
 ```
 
-## Results
+### Results
 
-### Sweden
-
-Christian Hilmersson registered late and decided to learn the track by doing it: he opened 1177 in the browser, grabbed an appointment-flow request from DevTools, sanitised it, and built a small local app that takes the raw 1177 JSON and converts it to FHIR. The interesting twist is that the model runs entirely on his own machine - a 4B-parameter Qwen model picked because it supports tool calling, where smaller open-weights models often don't. He then wrapped a UI around it with a chat panel, so once the data is converted you can ask things like "summarise my bookings" without scrolling through JSON. Two ingestion paths are supported (paste a pre-sanitised file, or pipe a fresh curl through the sanitiser script first).
-
-Rickard Ötvös took a different angle from inside Cambio: rather than scraping 1177, he pointed an AI coding agent at Cambio's existing REST APIs - the older system-to-system endpoints that already expose much of the same data - and used it to upgrade and translate the responses into a FHIR-like shape, reusing FHIR resources where they already aligned and filling the rest from the REST payloads. The output was generated fast but is not yet validated; the takeaway is that the same agent-driven facade pattern works equally well against a vendor's existing integration surface, not just patient portals.
-
-Jens Kristian Villadsen built [c3po-initiative/1177](https://github.com/c3po-initiative/1177), a read-only HAPI FHIR R4 proxy that fronts three Swedish 1177 services and exposes them as standard FHIR. The proxy authenticates against the Inera QA environment using HTTP Basic (personnummer + portal password), performs a SAML/Shibboleth login dance against the shared Inera IDP for each upstream SP, and joins the responses into a single FHIR API per authenticated patient. It maps `journalen` (journal records, HTML fragments inside JSON envelopes) to `DocumentReference`, `bokadetider` (appointment booking) to `Appointment`, and `e-tjanster` (patient inbox) to `Communication`/`DocumentReference`. The whole thing was assembled in under five hours of AI-assisted coding, and Jens Kristian's takeaway was that there are no technical limitations to building a FHIR facade for 1177 - it is entirely a governance question. The repo follows the pattern previously established for the Danish [Dhroxy](https://github.com/c3po-initiative/dhroxy) project.
-
-### Finland
-
-Mikael worked on Kanta implementation. Claude got pretty far with implementation. It was able to
-find many types of information and map those to correct FHIR resource types. It required some
-guidance to find the rest of the information. This seems to be due to the Kanta portal currently
-being split to two instances, a legacy and a new one, with most information being available only
-on one instance.
-
-Eventually Claude got derailed attempting to implement authentication properly.
-
-It may be worthwhile to try again, from a clean slate.
-
-The repo used in this exercise contains personal health information and is not shared publicly.
+See the [Results](results.html#agentic-patient-access) page.
