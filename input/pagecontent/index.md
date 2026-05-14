@@ -28,7 +28,7 @@ Bonus sessions running in parallel with hacking from 9:30 (15 minutes each):
 
 - **eHM** presenting their work
 - **UMI** track - see [the presentation](UMI-on-FHIR.pptx)
-- **IHE's Gazelle** tool
+- **IHE's Gazelle** tool - see [the presentation](Xt-EHR_Testing_Hackathon_Vitalis_20260508.pdf)
 
 ### Preparation
 
