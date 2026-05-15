@@ -26,7 +26,7 @@ The hackathon includes three tracks:
 
 Bonus sessions running in parallel with hacking from 9:30 (15 minutes each):
 
-- **eHM** presenting their work
+- **eHM** presenting their work - see [the presentation](SEHA_Vitalis_Hackathon_Presentation_20260508.pdf)
 - **UMI** track - see [the presentation](UMI-on-FHIR.pptx)
 - **IHE's Gazelle** tool - see [the presentation](Xt-EHR_Testing_Hackathon_Vitalis_20260508.pdf)
 
